@@ -1,0 +1,17 @@
+ 
+<p>Three weeks ago a group of 18 strangers banded together to banish bad code.  Following their intrepid leaders into the bowels of Ruby, our fearless programmers are conquering code one bug at a time.</p>
+<p>All was well in the WDI until Cowboy Coder Jessse went rogue and tried to restyle the whole web.</p>
+<p>With great coding comes great responsibility.</p>
+<p>Join us in our quest to keep the web free of CSS tyrrany.</p>
+
+BUTTON
+
+
+<h2>Our Members!</h2>
+<ul>
+	<% @heroe.each do |heroe| %>
+		<li>
+			<%= heroe.alt %> <%= heroe.name %> <%= heroe.super_power %> <%= heroe.cape %> <%= heroe.img %> <%= heroe.weakness %>
+		</li>
+	<% end %>
+</ul>

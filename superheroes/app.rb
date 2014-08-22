@@ -1,104 +1,43 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require_relative 'calculations'
+require_relative 'superheroes'
 
 get '/' do
+	@hero = Hero.all
 	erb :index 
 end
 
-get '/divide' do
-	erb :divide 
+get '/new' do
+	@hero = Hero.all
+	erb :new 
 end
 
-get '/add' do
-	erb :add 
+get '/leaders' do
+	erb :leaders 
 end
 
-get '/multiply' do
-	erb :multiply 
+get '/thanks' do
+	erb :thanks
 end
 
-get '/subtract' do
-	erb :subtract 
-end
-
-get '/calculator' do
-	@calc = Calc.all
-	erb :calculator
-end
-
-post '/divide' do
-	total = params[:num_1].to_i / params[:num_2].to_i
-
-	@calc = Calc.new({
-		:num_1 => params[:num_1], 
-		:num_2 => params[:num_2],
-		:operator => "/",
-		:total => total})
-	if @calc.save
-		redirect '/calculator'
+post '/new' do
+	@heroe = Heroe.new({
+		@alt => params[:alt],
+		@name => params[:name],
+		@super_power => params[:super_power],
+		@cape => params[:cape],
+		@role => params[:role],
+		@img => params[:img],
+		@weakness => params[:weakness]})
+	if @heroe.save
+		redirect '/thanks'
 	else
 		"There was an error, try again"
 	end
 
-	erb :divide
-end
-
-post '/add' do
-	total = params[:num_1].to_i + params[:num_2].to_i
-
-	@calc = Calc.new({
-		:num_1 => params[:num_1], 
-		:num_2 => params[:num_2],
-		:operator => "+",
-		:total => total})
-	if @calc.save
-		redirect '/calculator'
-	else
-		"There was an error, try again"
-	end
-end
-
-post '/subtract' do
-	total = params[:num_1].to_i - params[:num_2].to_i
-
-	@calc = Calc.new({
-		:num_1 => params[:num_1], 
-		:num_2 => params[:num_2],
-		:operator => "-",
-		:total => total})
-	if @calc.save
-		redirect '/calculator'
-	else
-		"There was an error, try again"
-	end
-end
-
-post '/multiply' do
-	total = params[:num_1].to_i * params[:num_2].to_i
-
-	@calc = Calc.new({
-		:num_1 => params[:num_1], 
-		:num_2 => params[:num_2],
-		:operator => "*",
-		:total => total})
-	if @calc.save
-		redirect '/calculator'
-	else
-		"There was an error, try again"
-	end
+	erb :new
 end
 
 
 
-
-# get '/calculator/:id' do
-# 	id = params[:id].to_i
-# 	entry = calculator[id]
-# 	if entry
-# 		entry
-# 	else
-# 		"No one has done this caclulation yet."
-# 	end
-# end
 
