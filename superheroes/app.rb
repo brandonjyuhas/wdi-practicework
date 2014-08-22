@@ -7,12 +7,12 @@ get '/' do
 end
 
 get '/new' do
-	@heroe = Heroe.all
+	@heroes = Heroe.where(role: "hero")
 	erb :new 
 end
 
 get '/leaders' do
-	@heroe = Heroe.all
+	@heroes = Heroe.where(role: "leader")
 	erb :leaders 
 end
 
@@ -21,7 +21,7 @@ get '/thanks' do
 end
 
 get '/members' do
-	@heroe = Heroe.all
+	@heroes = Heroe.where(role: "hero")
 	erb :members
 end
 
@@ -42,7 +42,5 @@ post '/new' do
 
 	erb :new
 end
-
-
 
 

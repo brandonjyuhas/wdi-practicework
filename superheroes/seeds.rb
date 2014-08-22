@@ -54,7 +54,7 @@ Hero.create(
     },
         { alt: "Liz Wendling", name: "Red Green Refractorer", super_power: "Everything eventually gets passed with one line of code!", cape: true, role: "hero", img: "/images/17.jpg", weakness: "Div soup!"
     	
-    }
+    },
         { alt: "Mikael Davis", name: "Mentoring Mike", cape: false, role: "leader", img: "/images/mike.jpg"
     	},
     { alt: "Sean Shannon", name: "Stuttering Sean", cape: true, role: "leader", img: "images/sean.jpg"
