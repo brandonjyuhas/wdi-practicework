@@ -1,23 +1,28 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require_relative 'superheroes'
+require_relative 'hero.rb'
 
 get '/' do
-	@hero = Hero.all
 	erb :index 
 end
 
 get '/new' do
-	@hero = Hero.all
+	@heroe = Heroe.all
 	erb :new 
 end
 
 get '/leaders' do
+	@heroe = Heroe.all
 	erb :leaders 
 end
 
 get '/thanks' do
 	erb :thanks
+end
+
+get '/members' do
+	@heroe = Heroe.all
+	erb :members
 end
 
 post '/new' do
