@@ -9,7 +9,7 @@ ActiveRecord::Base.establish_connection(
   :database => "super_heroes"
 )
 
-class Hero < ActiveRecord::Base
+class Heroe < ActiveRecord::Base
 end
 
 binding.pry
